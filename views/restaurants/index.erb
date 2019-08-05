@@ -1,0 +1,29 @@
+<h1>Restaurants List</h1>
+
+<form action="/restaurants" method="POST">
+  <label>
+    Name
+    <input type="text" name="name" autocomplete="0">
+  </label>
+  <br>
+  <label>
+    City
+    <input type="text" name="city" autocomplete="0">
+  </label>
+  <br>
+  </label>
+  <label>
+    Capacity
+    <input type="number" name="capacity" autocomplete="0">
+  </label>
+  <br>
+  <input type="submit">
+</form>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><a href="/restaurants/<%= restaurant.id %>">
+      <%= restaurant.name %>
+    </a></li>
+  <% end %>
+</ul>
